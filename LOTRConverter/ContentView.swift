@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var leftAmount = ""
+    @State var rightAmount = ""
+    
     var body: some View {
         ZStack {
             // Background image
@@ -44,9 +47,13 @@ struct ContentView: View {
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
+                        .padding(.bottom, -5)
                         
                         // Text field
-                        Text("Text field")
+                        TextField("Amount", text: $leftAmount)
+                            .padding(7)
+                            .background(Color(UIColor.systemGray6))
+                            .cornerRadius(7)
                     }
                     
                     // Equal sign
@@ -69,11 +76,19 @@ struct ContentView: View {
                                 .scaledToFit()
                                 .frame(height: 33)
                         }
+                        .padding(.bottom, -5)
                         
                         // Text field
-                        Text("Text field")
+                        TextField("Amount", text: $rightAmount)
+                            .padding(7)
+                            .background(Color(UIColor.systemGray6))
+                            .cornerRadius(7)
+                            .multilineTextAlignment(.trailing)
                     }
                 }
+                .padding()
+                .background(.black.opacity(0.5))
+                .cornerRadius(50)
                 
                 Spacer()
                 
@@ -87,7 +102,8 @@ struct ContentView: View {
                         Image(systemName: "info.circle.fill")
                     }
                     .font(.largeTitle)
-                .foregroundColor(.white)
+                    .foregroundColor(.white)
+                    .padding(.trailing)
                 }
             }
         }
