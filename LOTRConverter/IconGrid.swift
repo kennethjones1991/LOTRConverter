@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconGrid: View {
-    let gridLayout = [GridItem(), GridItem(), GridItem()] // Change; to let
+    let gridLayout = [GridItem(), GridItem(), GridItem()]
     @Binding var currency: Currency
     
     var body: some View {
@@ -17,20 +17,19 @@ struct IconGrid: View {
                 let checkCurrency = Currency.allCases[i]
                 
                 if checkCurrency == currency {
-                    CurrencyIcon(currencyImage: currency.image, currencyText: currency.text) // Change; to use new currency image and text properties
+                    CurrencyIcon(currencyImage: currency.image, currencyText: currency.text)
                         .overlay(RoundedRectangle(cornerRadius: 25)
                             .stroke(lineWidth: 3)
                             .opacity(0.5))
                         .shadow(color: .black, radius: 9)
                 } else {
-                    CurrencyIcon(currencyImage: checkCurrency.image, currencyText: checkCurrency.text) // Change; same as above
+                    CurrencyIcon(currencyImage: checkCurrency.image, currencyText: checkCurrency.text)
                         .onTapGesture {
                             currency = checkCurrency
                         }
                 }
             }
         }
-//        .padding([.bottom, .leading, .trailing]) // Remove
     }
 }
 

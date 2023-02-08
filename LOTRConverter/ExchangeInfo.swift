@@ -15,7 +15,7 @@ struct ExchangeInfo: View {
             // Background image; parchment
             Image("parchment")
                 .resizable()
-                .ignoresSafeArea() // Change
+                .ignoresSafeArea()
                 .background(.brown)
             
             VStack {
@@ -45,7 +45,7 @@ struct ExchangeInfo: View {
                 .padding()
                 .buttonStyle(.borderedProminent)
                 .tint(.brown)
-                .foregroundColor(.white) // Change; some modifiers
+                .foregroundColor(.white)
             }
             .foregroundColor(.black)
         }
@@ -55,6 +55,5 @@ struct ExchangeInfo: View {
 struct ExchangeInfo_Previews: PreviewProvider {
     static var previews: some View {
         ExchangeInfo()
-//            .preferredColorScheme(.dark) // Remove
     }
 }

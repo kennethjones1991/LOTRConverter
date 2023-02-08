@@ -6,13 +6,13 @@
 //
 
 enum Currency: Double, CaseIterable {
-    case copperPenny = 6400 // Change
+    case copperPenny = 6400
     case silverPenny = 64
     case silverPiece = 16
     case goldPenny = 4
     case goldPiece = 1
     
-    var text: String { // New
+    var text: String {
         switch self {
         case .copperPenny:
             return "Copper Penny"
@@ -27,7 +27,7 @@ enum Currency: Double, CaseIterable {
         }
     }
     
-    var image: String { // New
+    var image: String {
         switch self {
         case .copperPenny:
             return "copperpenny"
@@ -56,19 +56,3 @@ enum Currency: Double, CaseIterable {
         }
     }
 }
-
-//enum CurrencyText: String, CaseIterable { // Remove
-//    case copperPenny = "Copper Penny"
-//    case silverPenny = "Silver Penny"
-//    case silverPiece = "Silver Piece"
-//    case goldPenny = "Gold Penny"
-//    case goldPiece = "Gold Piece"
-//}
-//
-//enum CurrencyImage: String, CaseIterable {
-//    case copperPenny = "copperpenny"
-//    case silverPenny = "silverpenny"
-//    case silverPiece = "silverpiece"
-//    case goldPenny = "goldpenny"
-//    case goldPiece = "goldpiece"
-//}

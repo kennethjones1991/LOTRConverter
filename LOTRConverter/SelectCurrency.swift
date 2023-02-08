@@ -17,7 +17,7 @@ struct SelectCurrency: View {
             // Background parchment image
             Image("parchment")
                 .resizable()
-                .ignoresSafeArea() // Change
+                .ignoresSafeArea()
                 .background(.brown)
             
             VStack {
@@ -32,7 +32,7 @@ struct SelectCurrency: View {
                 // Text
                 Text("Select the currency you would like to convert to:")
                     .fontWeight(.bold)
-                    .padding(.top) // New
+                    .padding(.top)
                     .multilineTextAlignment(.center)
                 
                 // Currency icons
@@ -46,10 +46,10 @@ struct SelectCurrency: View {
                 .padding()
                 .buttonStyle(.borderedProminent)
                 .tint(.brown)
-                .foregroundColor(.white) // Change; some modifiers
+                .foregroundColor(.white)
             }
             .padding()
-            .foregroundColor(.black) // New
+            .foregroundColor(.black)
         }
     }
 }

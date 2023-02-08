@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExchangeRate: View {
-    let leftImage: String // Change; all 3 from @State var to let
+    let leftImage: String
     let text: String
     let rightImage: String
     
@@ -35,6 +35,5 @@ struct ExchangeRate: View {
 struct ExchangeRate_Previews: PreviewProvider {
     static var previews: some View {
         ExchangeRate(leftImage: "goldpenny", text: "1 Gold Penny = 4 Silver Pieces", rightImage: "silverpiece")
-//            .previewLayout(.sizeThatFits) // Remove; messes with preview
     }
 }

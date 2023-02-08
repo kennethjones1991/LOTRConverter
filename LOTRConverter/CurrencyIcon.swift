@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrencyIcon: View {
-    let currencyImage: String // Change; both to let
+    let currencyImage: String
     let currencyText: String
     
     var body: some View {
@@ -25,7 +25,7 @@ struct CurrencyIcon: View {
                 Text(currencyText)
                     .padding(3)
                     .font(.caption)
-                    .frame(maxWidth: .infinity) // New
+                    .frame(maxWidth: .infinity)
                     .background(.brown.opacity(0.75))
             }
         }
@@ -39,6 +39,5 @@ struct CurrencyIcon: View {
 struct CurrencyIcon_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyIcon(currencyImage: "goldpenny", currencyText: "Gold Penny")
-//            .previewLayout(.sizeThatFits) // Remove
     }
 }

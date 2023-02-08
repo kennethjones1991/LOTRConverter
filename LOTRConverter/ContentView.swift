@@ -24,7 +24,7 @@ struct ContentView: View {
             // Background image
             Image("background")
                 .resizable()
-                .ignoresSafeArea() // Change
+                .ignoresSafeArea()
             
             VStack {
                 // Prancing pony image
@@ -45,13 +45,13 @@ struct ContentView: View {
                         // Currency
                         HStack {
                             // Currency image
-                            Image(leftCurrency.image) // Change; image property
+                            Image(leftCurrency.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
                             
                             // Currency text
-                            Text(leftCurrency.text) // Change; text property
+                            Text(leftCurrency.text)
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
@@ -90,12 +90,12 @@ struct ContentView: View {
                         // Currency
                         HStack {
                             // Currency text
-                            Text(rightCurrency.text) // Change
+                            Text(rightCurrency.text)
                                 .font(.headline)
                                 .foregroundColor(.white)
                             
                             // Currency image
-                            Image(rightCurrency.image) // Change
+                            Image(rightCurrency.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
