@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CurrencyIcon: View {
-    @State var currencyImage: String
-    @State var currencyText: String // TODO: both of these values can just be let instead of @State var
+    let currencyImage: String // Change; both to let
+    let currencyText: String
     
     var body: some View {
         ZStack {
@@ -25,6 +25,7 @@ struct CurrencyIcon: View {
                 Text(currencyText)
                     .padding(3)
                     .font(.caption)
+                    .frame(maxWidth: .infinity) // New
                     .background(.brown.opacity(0.75))
             }
         }
@@ -38,6 +39,6 @@ struct CurrencyIcon: View {
 struct CurrencyIcon_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyIcon(currencyImage: "goldpenny", currencyText: "Gold Penny")
-            .previewLayout(.sizeThatFits) // TODO: get rid of this
+//            .previewLayout(.sizeThatFits) // Remove
     }
 }

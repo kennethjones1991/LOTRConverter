@@ -8,27 +8,29 @@
 import SwiftUI
 
 struct IconGrid: View {
-    @State var gridLayout = [GridItem(), GridItem(), GridItem()] // TODO: this can just be let instead of @State var
+    let gridLayout = [GridItem(), GridItem(), GridItem()] // Change; to let
     @Binding var currency: Currency
     
     var body: some View {
         LazyVGrid(columns: gridLayout) {
             ForEach(0..<5) { i in
-                if Currency.allCases[i] == currency {
-                    CurrencyIcon(currencyImage: CurrencyImage.allCases[i].rawValue, currencyText: CurrencyText.allCases[i].rawValue)
+                let checkCurrency = Currency.allCases[i]
+                
+                if checkCurrency == currency {
+                    CurrencyIcon(currencyImage: currency.image, currencyText: currency.text) // Change; to use new currency image and text properties
                         .overlay(RoundedRectangle(cornerRadius: 25)
                             .stroke(lineWidth: 3)
                             .opacity(0.5))
                         .shadow(color: .black, radius: 9)
                 } else {
-                    CurrencyIcon(currencyImage: CurrencyImage.allCases[i].rawValue, currencyText: CurrencyText.allCases[i].rawValue)
+                    CurrencyIcon(currencyImage: checkCurrency.image, currencyText: checkCurrency.text) // Change; same as above
                         .onTapGesture {
-                            currency = Currency.allCases[i]
+                            currency = checkCurrency
                         }
                 }
             }
         }
-        .padding([.bottom, .leading, .trailing])
+//        .padding([.bottom, .leading, .trailing]) // Remove
     }
 }
 

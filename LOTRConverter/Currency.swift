@@ -6,13 +6,43 @@
 //
 
 enum Currency: Double, CaseIterable {
-    case copperPenny = 640 // TODO: This should actually be 6400, not 640
+    case copperPenny = 6400 // Change
     case silverPenny = 64
     case silverPiece = 16
     case goldPenny = 4
     case goldPiece = 1
     
-    func convert(amountString: String, to currency: Currency) -> String { // TODO: this function will probably change if we change the TextFields to use a currency value instead of text
+    var text: String { // New
+        switch self {
+        case .copperPenny:
+            return "Copper Penny"
+        case .silverPenny:
+            return "Silver Penny"
+        case .silverPiece:
+            return "Silver Piece"
+        case .goldPenny:
+            return "Gold Penny"
+        case .goldPiece:
+            return "Gold Piece"
+        }
+    }
+    
+    var image: String { // New
+        switch self {
+        case .copperPenny:
+            return "copperpenny"
+        case .silverPenny:
+            return "silverpenny"
+        case .silverPiece:
+            return "silverpiece"
+        case .goldPenny:
+            return "goldpenny"
+        case .goldPiece:
+            return "goldpiece"
+        }
+    }
+    
+    func convert(amountString: String, to currency: Currency) -> String {
         guard let startAmount = Double(amountString) else {
             return ""
         }
@@ -27,18 +57,18 @@ enum Currency: Double, CaseIterable {
     }
 }
 
-enum CurrencyText: String, CaseIterable { // TODO: instead of having CurrencyText and CurrencyImage, just throw a couple computed properties in the Currency model called text and imageName and then switch over the cases and return the proper strings
-    case copperPenny = "Copper Penny"
-    case silverPenny = "Silver Penny"
-    case silverPiece = "Silver Piece"
-    case goldPenny = "Gold Penny"
-    case goldPiece = "Gold Piece"
-}
-
-enum CurrencyImage: String, CaseIterable {
-    case copperPenny = "copperpenny"
-    case silverPenny = "silverpenny"
-    case silverPiece = "silverpiece"
-    case goldPenny = "goldpenny"
-    case goldPiece = "goldpiece"
-}
+//enum CurrencyText: String, CaseIterable { // Remove
+//    case copperPenny = "Copper Penny"
+//    case silverPenny = "Silver Penny"
+//    case silverPiece = "Silver Piece"
+//    case goldPenny = "Gold Penny"
+//    case goldPiece = "Gold Piece"
+//}
+//
+//enum CurrencyImage: String, CaseIterable {
+//    case copperPenny = "copperpenny"
+//    case silverPenny = "silverpenny"
+//    case silverPiece = "silverpiece"
+//    case goldPenny = "goldpenny"
+//    case goldPiece = "goldpiece"
+//}

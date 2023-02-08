@@ -24,7 +24,7 @@ struct ContentView: View {
             // Background image
             Image("background")
                 .resizable()
-                .edgesIgnoringSafeArea(.all) // <-- TODO: replace with .ignoreSafeAreas() <- yeah this
+                .ignoresSafeArea() // Change
             
             VStack {
                 // Prancing pony image
@@ -45,13 +45,13 @@ struct ContentView: View {
                         // Currency
                         HStack {
                             // Currency image
-                            Image(CurrencyImage.allCases[Currency.allCases.firstIndex(of: leftCurrency)!].rawValue)
+                            Image(leftCurrency.image) // Change; image property
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
                             
                             // Currency text
-                            Text(CurrencyText.allCases[Currency.allCases.firstIndex(of: leftCurrency)!].rawValue)
+                            Text(leftCurrency.text) // Change; text property
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
@@ -64,7 +64,7 @@ struct ContentView: View {
                         }
                         
                         // Text field
-                        TextField("Amount", text: $leftAmount, onEditingChanged: { typing in // TODO: consider using value instead of text and then using currency as the value type; see https://www.hackingwithswift.com/books/ios-swiftui/reading-text-from-the-user-with-textfield
+                        TextField("Amount", text: $leftAmount, onEditingChanged: { typing in
                             leftTyping = typing
                             leftAmountTemp = leftAmount
                         })
@@ -90,12 +90,12 @@ struct ContentView: View {
                         // Currency
                         HStack {
                             // Currency text
-                            Text(CurrencyText.allCases[Currency.allCases.firstIndex(of: rightCurrency)!].rawValue)
+                            Text(rightCurrency.text) // Change
                                 .font(.headline)
                                 .foregroundColor(.white)
                             
                             // Currency image
-                            Image(CurrencyImage.allCases[Currency.allCases.firstIndex(of: rightCurrency)!].rawValue)
+                            Image(rightCurrency.image) // Change
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)

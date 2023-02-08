@@ -17,7 +17,7 @@ struct SelectCurrency: View {
             // Background parchment image
             Image("parchment")
                 .resizable()
-                .edgesIgnoringSafeArea(.all) // TODO: change to ignoreSafeArea
+                .ignoresSafeArea() // Change
                 .background(.brown)
             
             VStack {
@@ -32,21 +32,24 @@ struct SelectCurrency: View {
                 // Text
                 Text("Select the currency you would like to convert to:")
                     .fontWeight(.bold)
+                    .padding(.top) // New
                     .multilineTextAlignment(.center)
                 
                 // Currency icons
                 IconGrid(currency: $rightCurrency)
                 
                 // Done button
-                Button("Done") { // TODO: Try making these Done buttons buttonStyle(.borderedProminent) with a brown tint instead of what we have here
+                Button("Done") {
                     dismiss()
                 }
                 .font(.largeTitle)
-                .padding(10)
-                .foregroundColor(.white)
-                .background(.brown)
-                .cornerRadius(15)
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .tint(.brown)
+                .foregroundColor(.white) // Change; some modifiers
             }
+            .padding()
+            .foregroundColor(.black) // New
         }
     }
 }

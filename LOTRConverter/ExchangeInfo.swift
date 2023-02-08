@@ -15,7 +15,7 @@ struct ExchangeInfo: View {
             // Background image; parchment
             Image("parchment")
                 .resizable()
-                .edgesIgnoringSafeArea(.all) // TODO: change to ignoreSafeArea
+                .ignoresSafeArea() // Change
                 .background(.brown)
             
             VStack {
@@ -38,14 +38,14 @@ struct ExchangeInfo: View {
                 ExchangeRate(leftImage: "silverpenny", text: "1 Silver Penny = 100 Copper Pennies", rightImage: "copperpenny")
                 
                 // Done button
-                Button("Done") { // TODO: style this button the same as the select currency one
+                Button("Done") {
                     dismiss()
                 }
                 .font(.largeTitle)
-                .padding(10)
-                .foregroundColor(.white)
-                .background(.brown)
-                .cornerRadius(15)
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .tint(.brown)
+                .foregroundColor(.white) // Change; some modifiers
             }
             .foregroundColor(.black)
         }
@@ -55,6 +55,6 @@ struct ExchangeInfo: View {
 struct ExchangeInfo_Previews: PreviewProvider {
     static var previews: some View {
         ExchangeInfo()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark) // Remove
     }
 }
