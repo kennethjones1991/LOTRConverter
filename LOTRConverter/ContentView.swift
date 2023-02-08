@@ -59,9 +59,6 @@ struct ContentView: View {
                         .onTapGesture {
                             showSelectCurrency.toggle()
                         }
-                        .sheet(isPresented: $showSelectCurrency) {
-                            SelectCurrency(leftCurrency: $leftCurrency, rightCurrency: $rightCurrency)
-                        }
                         
                         // Text field
                         TextField("Amount", text: $leftAmount, onEditingChanged: { typing in
@@ -71,7 +68,7 @@ struct ContentView: View {
                             .padding(7)
                             .background(Color(UIColor.systemGray6))
                             .cornerRadius(7)
-                            .keyboardType(.decimalPad) // TODO: possibly also add a Done button to dismiss the keyboard (if I'm including that in the lessons)
+                            .keyboardType(.decimalPad)
                             .onChange(of: leftTyping ? leftAmount : leftAmountTemp) { _ in
                                 rightAmount = leftCurrency.convert(amountString: leftAmount, to: rightCurrency)
                             }
@@ -103,9 +100,6 @@ struct ContentView: View {
                         .padding(.bottom, -5)
                         .onTapGesture {
                             showSelectCurrency.toggle()
-                        }
-                        .sheet(isPresented: $showSelectCurrency) {
-                            SelectCurrency(leftCurrency: $leftCurrency, rightCurrency: $rightCurrency)
                         }
                         
                         // Text field
@@ -143,10 +137,13 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .padding(.trailing)
-                    .sheet(isPresented: $showExchangeInfo) {
-                        ExchangeInfo()
-                    } // TODO: consider moving all the sheet modifiers to the end and under the parent view
                 }
+            }
+            .sheet(isPresented: $showSelectCurrency) {
+                SelectCurrency(leftCurrency: $leftCurrency, rightCurrency: $rightCurrency)
+            }
+            .sheet(isPresented: $showExchangeInfo) {
+                ExchangeInfo()
             }
         }
     }
