@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CurrencyIcon: View {
     @State var currencyImage: String
-    @State var currencyText: String
+    @State var currencyText: String // TODO: both of these values can just be let instead of @State var
     
     var body: some View {
         ZStack {
@@ -38,6 +38,6 @@ struct CurrencyIcon: View {
 struct CurrencyIcon_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyIcon(currencyImage: "goldpenny", currencyText: "Gold Penny")
-            .previewLayout(.sizeThatFits)
+            .previewLayout(.sizeThatFits) // TODO: get rid of this
     }
 }

@@ -17,7 +17,7 @@ struct SelectCurrency: View {
             // Background parchment image
             Image("parchment")
                 .resizable()
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all) // TODO: change to ignoreSafeArea
                 .background(.brown)
             
             VStack {
@@ -38,7 +38,7 @@ struct SelectCurrency: View {
                 IconGrid(currency: $rightCurrency)
                 
                 // Done button
-                Button("Done") {
+                Button("Done") { // TODO: Try making these Done buttons buttonStyle(.borderedProminent) with a brown tint instead of what we have here
                     dismiss()
                 }
                 .font(.largeTitle)

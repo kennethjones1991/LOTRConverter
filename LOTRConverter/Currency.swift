@@ -6,13 +6,13 @@
 //
 
 enum Currency: Double, CaseIterable {
-    case copperPenny = 640
+    case copperPenny = 640 // TODO: This should actually be 6400, not 640
     case silverPenny = 64
     case silverPiece = 16
     case goldPenny = 4
     case goldPiece = 1
     
-    func convert(amountString: String, to currency: Currency) -> String {
+    func convert(amountString: String, to currency: Currency) -> String { // TODO: this function will probably change if we change the TextFields to use a currency value instead of text
         guard let startAmount = Double(amountString) else {
             return ""
         }
@@ -27,7 +27,7 @@ enum Currency: Double, CaseIterable {
     }
 }
 
-enum CurrencyText: String, CaseIterable {
+enum CurrencyText: String, CaseIterable { // TODO: instead of having CurrencyText and CurrencyImage, just throw a couple computed properties in the Currency model called text and imageName and then switch over the cases and return the proper strings
     case copperPenny = "Copper Penny"
     case silverPenny = "Silver Penny"
     case silverPiece = "Silver Piece"

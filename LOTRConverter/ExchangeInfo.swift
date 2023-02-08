@@ -15,7 +15,7 @@ struct ExchangeInfo: View {
             // Background image; parchment
             Image("parchment")
                 .resizable()
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all) // TODO: change to ignoreSafeArea
                 .background(.brown)
             
             VStack {
@@ -38,7 +38,7 @@ struct ExchangeInfo: View {
                 ExchangeRate(leftImage: "silverpenny", text: "1 Silver Penny = 100 Copper Pennies", rightImage: "copperpenny")
                 
                 // Done button
-                Button("Done") {
+                Button("Done") { // TODO: style this button the same as the select currency one
                     dismiss()
                 }
                 .font(.largeTitle)

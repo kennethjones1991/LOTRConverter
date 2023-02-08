@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IconGrid: View {
-    @State var gridLayout = [GridItem(), GridItem(), GridItem()]
+    @State var gridLayout = [GridItem(), GridItem(), GridItem()] // TODO: this can just be let instead of @State var
     @Binding var currency: Currency
     
     var body: some View {
