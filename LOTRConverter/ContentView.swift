@@ -12,10 +12,12 @@ struct ContentView: View {
     @State var rightAmount = ""
     @State var leftAmountTemp = "" // TODO: one of the students claimed that we don't need these temp amounts and everything still works the same without them; test it out and see if you can get it working without these
     @State var rightAmountTemp = ""
+    
     @State var leftTyping = false
     @State var rightTyping = false
     @State var leftCurrency: Currency = .silverPiece
     @State var rightCurrency: Currency = .goldPiece
+    
     @State var showSelectCurrency = false
     @State var showExchangeInfo = false
     
