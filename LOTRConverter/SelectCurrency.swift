@@ -15,10 +15,7 @@ struct SelectCurrency: View {
     var body: some View {
         ZStack {
             // Background parchment image
-            Image("parchment")
-                .resizable()
-                .ignoresSafeArea()
-                .background(.brown)
+            InfoBackgroundImage()
             
             VStack {
                 // Text
@@ -42,11 +39,7 @@ struct SelectCurrency: View {
                 Button("Done") {
                     dismiss()
                 }
-                .font(.largeTitle)
-                .padding()
-                .buttonStyle(.borderedProminent)
-                .tint(.brown)
-                .foregroundColor(.white)
+                .doneButton()
             }
             .padding()
             .foregroundColor(.black)

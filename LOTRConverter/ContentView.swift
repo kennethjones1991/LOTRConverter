@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var leftAmount = ""
     @State var rightAmount = ""
-    @State var leftAmountTemp = "" // TODO: one of the students claimed that we don't need these temp amounts and everything still works the same without them; test it out and see if you can get it working without these
+    @State var leftAmountTemp = ""
     @State var rightAmountTemp = ""
     
     @State var leftTyping = false
@@ -63,7 +63,7 @@ struct ContentView: View {
                         }
                         
                         // Text field
-                        TextField("Amount", text: $leftAmount, onEditingChanged: { typing in
+                        TextField(AppConstants.tfPlaceholder, text: $leftAmount, onEditingChanged: { typing in
                             leftTyping = typing
                             leftAmountTemp = leftAmount
                         })
@@ -105,7 +105,7 @@ struct ContentView: View {
                         }
                         
                         // Text field
-                        TextField("Amount", text: $rightAmount, onEditingChanged: { typing in
+                        TextField(AppConstants.tfPlaceholder, text: $rightAmount, onEditingChanged: { typing in
                             rightTyping = typing
                             rightAmountTemp = rightAmount
                         })

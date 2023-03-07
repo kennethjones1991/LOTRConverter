@@ -38,6 +38,6 @@ struct CurrencyIcon: View {
 
 struct CurrencyIcon_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyIcon(currencyImage: "goldpenny", currencyText: "Gold Penny")
+        CurrencyIcon(currencyImage: Currency.goldPenny.image, currencyText: Currency.goldPenny.text)
     }
 }

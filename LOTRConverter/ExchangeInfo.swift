@@ -13,10 +13,7 @@ struct ExchangeInfo: View {
     var body: some View {
         ZStack {
             // Background image; parchment
-            Image("parchment")
-                .resizable()
-                .ignoresSafeArea()
-                .background(.brown)
+            InfoBackgroundImage()
             
             VStack {
                 // Title text
@@ -29,23 +26,19 @@ struct ExchangeInfo: View {
                     .padding()
                 
                 // Exchange rates
-                ExchangeRate(leftImage: "goldpiece", text: "1 Gold Piece = 4 Gold Pennies", rightImage: "goldpenny")
+                ExchangeRate(leftImage: Currency.goldPiece.image, text: "1 Gold Piece = 4 Gold Pennies", rightImage: Currency.goldPenny.image)
                 
-                ExchangeRate(leftImage: "goldpenny", text: "1 Gold Penny = 4 Silver Pieces", rightImage: "silverpiece")
+                ExchangeRate(leftImage: Currency.goldPenny.image, text: "1 Gold Penny = 4 Silver Pieces", rightImage: Currency.silverPiece.image)
                 
-                ExchangeRate(leftImage: "silverpiece", text: "1 Silver Piece = 4 Silver Pennies", rightImage: "silverpenny")
+                ExchangeRate(leftImage: Currency.silverPiece.image, text: "1 Silver Piece = 4 Silver Pennies", rightImage: Currency.silverPenny.image)
                 
-                ExchangeRate(leftImage: "silverpenny", text: "1 Silver Penny = 100 Copper Pennies", rightImage: "copperpenny")
+                ExchangeRate(leftImage: Currency.silverPenny.image, text: "1 Silver Penny = 100 Copper Pennies", rightImage: Currency.copperPenny.image)
                 
                 // Done button
                 Button("Done") {
                     dismiss()
                 }
-                .font(.largeTitle)
-                .padding()
-                .buttonStyle(.borderedProminent)
-                .tint(.brown)
-                .foregroundColor(.white)
+                .doneButton()
             }
             .foregroundColor(.black)
         }
